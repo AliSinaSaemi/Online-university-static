@@ -1,0 +1,14 @@
+.breadcrumb-title {
+  font-family: BVazir;
+}
+.top-breadcrumb {
+  .breadcrumb-item {
+    color: $light;
+    &::before {
+      color: $light;
+    }
+    a {
+      color: $light;
+    }
+  }
+}

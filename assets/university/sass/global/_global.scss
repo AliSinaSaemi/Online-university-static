@@ -1,0 +1,139 @@
+html {
+  width: 100%;
+}
+
+body {
+  overflow-x: hidden !important;
+}
+
+body.show-spinner > main {
+  overflow: hidden !important;
+}
+
+/* Hide everything under body tag */
+body.show-spinner > * {
+  opacity: 0;
+}
+
+/* Spinner */
+body.show-spinner::after {
+  content: " ";
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  border-top-color: rgba(0, 0, 0, 0.3);
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+  left: calc(50% - 15px);
+  top: calc(50% - 15px);
+  position: fixed;
+  z-index: 1;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.background .mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+body {
+  font-family: "IRANSans_num_web", sans-serif;
+  color: $light;
+
+  p {
+    font-family: "LIRANSans", sans-serif;
+  }
+}
+
+.title-section {
+  font-size: 35px;
+  @include respond-below(sm) {
+    font-size: 25px;
+  }
+  font-family: BVazir;
+  color: $dark;
+  .underline {
+    width: 65px;
+    height: 1px;
+    background: $dark;
+    margin: auto;
+    margin-top: 13px;
+  }
+}
+
+.text-left {
+  text-align: -moz-left;
+  text-align: -webkit-left;
+  text-align: left;
+}
+
+.text-right {
+  text-align: -moz-right;
+  text-align: -webkit-right;
+  text-align: right;
+}
+
+.text-justify {
+  text-align: -moz-justify;
+  text-align: -webkit-justify;
+  text-align: justify;
+}
+
+.text-center {
+  text-align: -moz-center;
+  text-align: -webkit-center;
+  text-align: center;
+}
+
+.limit-text {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.abs {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.clear {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.title-color {
+  color: $dark;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+:focus {
+  outline: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  margin: auto;
+}

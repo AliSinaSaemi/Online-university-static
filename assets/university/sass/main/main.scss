@@ -1,0 +1,24 @@
+@import "../global/themes/_university.light.theme.scss";
+@import "../global/_fonts.scss";
+@import "../global/_mixins.scss";
+@import "../global/_global.scss";
+@import "../_university.style.scss";
+// Components
+
+@import "../components/side-menu.scss";
+@import "../components/banner.scss";
+@import "../components/blue-glass.scss";
+@import "../components/bookmark.scss";
+@import "../components/progress-circle.scss";
+@import "../components/prev-gold-icon.scss";
+@import "../components/info-list.scss";
+@import "../components/breadcrumb.scss";
+@import "../components/button.scss";
+@import "../components/card/card.scss";
+@import "../components/footer.scss";
+@import "../components/form.scss";
+@import "../components/header.scss";
+@import "../components/progressbar.scss";
+@import "../components/ticket.scss";
+@import "../components/tooltip.scss";
+@import "../components/tabbar.scss";

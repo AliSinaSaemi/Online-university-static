@@ -1,0 +1,18 @@
+.bookmark {
+  position: absolute;
+  z-index: 1;
+  left: 80px;
+
+  top: 0px;
+  &.bookmarked {
+    .filled {
+      opacity: 1;
+    }
+  }
+  .filled {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition: 0.3s;
+  }
+}

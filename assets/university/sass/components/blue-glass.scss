@@ -1,0 +1,14 @@
+.blue-glass {
+  display: block;
+
+  border-radius: 0 0 15px 15px;
+  position: absolute;
+  top: 100%;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+
+  height: 17px;
+  left: 14px;
+  right: 14px;
+  background-color: #d7deed;
+}

@@ -1,0 +1,137 @@
+.card-tooltip {
+  background: $darker_color;
+  color: #fff;
+  position: absolute;
+  text-align: center;
+  padding: 15px 20px;
+  width: 280px;
+  @include respond-below(sm) {
+    width: 190px;
+    text-align: justify;
+  }
+
+  z-index: 1000;
+  border-radius: 4px;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+  transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease,
+    -webkit-transform 0.3s ease;
+  -webkit-transform: translate(-50%, 0px);
+  transform: translate(-50%, 0px);
+  left: 50%;
+  @include respond-below(sm) {
+    left: 35%;
+  }
+  bottom: 125%;
+  p {
+    color: #fff;
+    text-align: center;
+    line-height: 2;
+    padding: 0;
+    margin: auto;
+    font-family: LIRANSans;
+    font-size: 11px;
+  }
+  &:after {
+    position: absolute;
+    z-index: 1001;
+    content: "";
+    width: 10px;
+    height: 10px;
+    top: 100%;
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: translate(-50%, -50%) rotate(45deg);
+    transform: translate(-50%, -50%) rotate(45deg);
+    left: 50%;
+    border-radius: 0 0 3px 0;
+    background: $darker_color;
+  }
+}
+
+.tooltip-dark {
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  -webkit-transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
+
+  &:hover {
+    .text {
+      opacity: 1;
+      pointer-events: auto;
+      -webkit-transform: translate(-50%, 0);
+      -moz-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+      -o-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+    }
+  }
+
+  .text {
+    background: $tooltip;
+    bottom: 100%;
+    color: #fff;
+    display: block;
+    left: 50%;
+    margin-bottom: 15px;
+    opacity: 0;
+    padding: 15px;
+    pointer-events: none;
+    position: absolute;
+    width: 220px;
+    -webkit-transform: translate(-50%, 10px);
+    -moz-transform: translate(-50%, 10px);
+    -ms-transform: translate(-50%, 10px);
+    -o-transform: translate(-50%, 10px);
+    transform: translate(-50%, 10px);
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    -ms-transition: all 0.25s ease-out;
+    -o-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+    -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+    -moz-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+    -ms-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+    -o-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+    font-family: IRansans;
+    border-radius: 5px;
+    font-size: 7.5pt;
+    text-align: justify;
+
+    &:before {
+      bottom: -20px;
+      content: " ";
+      display: block;
+      height: 20px;
+      left: 0;
+      position: absolute;
+      width: 100%;
+    }
+
+    &:after {
+      border-left: solid transparent 10px;
+      border-right: solid transparent 10px;
+      border-top: solid $tooltip 10px;
+      bottom: -10px;
+      content: " ";
+      height: 0;
+      left: 50%;
+      margin-left: -13px;
+      position: absolute;
+      width: 0;
+    }
+  }
+}
+
+/* ------------------- responsive ------------------- */
+
+@media screen and(max-width:768px) {
+  .tooltip-dark .text {
+    width: 150px;
+  }
+}

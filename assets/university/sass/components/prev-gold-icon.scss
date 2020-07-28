@@ -1,0 +1,14 @@
+.prev-gold-icon {
+  color: $white;
+  position: relative;
+  &.link {
+    &:hover {
+      color: $yellow;
+    }
+  }
+  img {
+    position: absolute;
+    right: -45px;
+    top: -5px;
+  }
+}

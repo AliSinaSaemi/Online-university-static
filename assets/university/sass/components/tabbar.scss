@@ -1,0 +1,60 @@
+.tabbar {
+  position: relative;
+  .list-unstyled {
+    border-bottom: 1px solid $separator-color;
+    position: relative;
+    .castle-bg {
+      left: -60px;
+      width: 650px;
+      position: absolute;
+      bottom: 0;
+      @include respond-below(xl) {
+        left: -50px;
+      }
+      @include respond-below(lg) {
+        width: 470px;
+        left: -39px;
+      }
+      @include respond-below(sm) {
+        width: 470px;
+        left: -15px;
+      }
+    }
+  }
+  .x-scroll {
+    position: relative;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    transition: all 0.2s;
+    transform: scale(0.98);
+    will-change: transform;
+    user-select: none;
+    cursor: pointer;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .x-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-content {
+    display: none;
+    animation: fadeEffect 0.8s;
+  }
+
+  @keyframes fadeEffect {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .tab-content.active {
+    display: block;
+  }
+}

@@ -1,0 +1,228 @@
+.card-chapter {
+  background-color: #fff;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 28px 80px 15px 30px;
+  @include respond-below(xs) {
+    padding: 35px 55px 20px 15px;
+    margin-right: 35px;
+  }
+  margin-right: 50px;
+  position: relative;
+  .progress-circle {
+    position: absolute;
+    right: -70px;
+    top: 35px;
+    box-shadow: 0 0 10px #f1f1f1;
+    @include respond-below(xs) {
+      transform: scale(0.8);
+    }
+    &:after {
+      top: 5px;
+      left: 5px;
+      width: 90px;
+      height: 90px;
+    }
+  }
+  .box {
+    width: 70%;
+    height: 7px;
+    background: $theme-color-1;
+    position: absolute;
+
+    top: 0;
+    left: 0;
+  }
+  .detail {
+    margin-bottom: 0;
+    margin-top: 35px;
+    line-height: 25px;
+    font-size: 12px;
+    text-align: justify;
+    color: $paragraph;
+  }
+  .title {
+    font-size: 25px;
+    color: $yellow;
+    font-weight: bold;
+    @include respond-below(xs) {
+      font-size: 22px;
+    }
+    span {
+      color: $light;
+      font-weight: lighter;
+    }
+  }
+  .free {
+    width: 85px;
+    padding: 5px 23px;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 13px;
+    background-color: #fdcc5c;
+    position: absolute;
+    text-align: center;
+    top: 62px;
+  }
+  .button-yellow {
+    margin-right: auto;
+    margin-left: unset;
+  }
+
+  .red_seperator {
+    height: 7px;
+    background-color: #a5134e;
+    margin: 20px 0;
+    margin-left: 10%;
+  }
+
+  .chapter-progress {
+    display: flex;
+    position: relative;
+    margin-bottom: 20px;
+    &.done,
+    &:hover {
+      .icon {
+        background-color: $yellow;
+      }
+      .xp,
+      .title {
+        color: $dark;
+      }
+    }
+    .icon {
+      background-color: $light;
+      position: absolute;
+      right: -50px;
+      width: 37px;
+      height: 37px;
+      border-radius: 10px;
+      transition: 0.3s;
+      img {
+        margin: auto;
+        margin-top: 11px;
+      }
+    }
+    .title {
+      color: $light;
+      font-size: 15px;
+      @include respond-below(xs) {
+        font-size: 11px;
+      }
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+    .xp {
+      margin-right: auto;
+      font-size: 20px;
+      margin-top: 2px;
+      @include respond-below(xs) {
+        font-size: 15px;
+        margin-top: 7px;
+      }
+      color: $light;
+      direction: ltr;
+      transition: 0.3s;
+    }
+  }
+}
+
+.wrapper-chapters {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  @include respond-below(md) {
+    flex-direction: column;
+  }
+  .section {
+    width: 43%;
+    @include respond-below(lg) {
+      width: 48%;
+    }
+    @include respond-below(md) {
+      width: 100%;
+    }
+    &:last-child {
+      margin-right: auto;
+      @include respond-below(md) {
+        margin-top: 45px;
+      }
+    }
+    .plane-rope {
+      margin-top: 50px;
+      .detail {
+        height: 75px;
+        @include respond-above(xl) {
+          line-height: 25px;
+        }
+      }
+
+      &:after {
+        content: "";
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 40px;
+        top: 0;
+        width: 40%;
+        transform: scale(1.9) rotate(-1deg);
+        height: 75%;
+        right: -41%;
+        @include respond-below(xxl) {
+          right: -46%;
+        }
+        @include respond-below(xl) {
+          right: -52%;
+        }
+        @include respond-below(lg) {
+          display: none;
+        }
+        position: absolute;
+      }
+      &:nth-child(2n + 1) {
+        &:after {
+          background-image: url(../img/chapter/03-line.svg);
+          transform: scale(2) rotate(-1deg) translate(-3px, -2px);
+          background-size: 55px;
+        }
+      }
+      &:nth-child(2n) {
+        &:after {
+          background-image: url(../img/chapter/02-line.svg);
+          transform: scale(1.9) rotate(0deg) translate(-9px, -3px);
+        }
+      }
+      &:last-child {
+        &:after {
+          background-image: url(../img/course/final-line.svg);
+          transform: scale(4) rotate(45deg) translate(1.5px, 1px);
+        }
+      }
+      &:last-child:nth-child(even) {
+        &:after {
+          background-image: url(../img/course/final-line.svg);
+          transform: scale(-4, 4) rotate(51deg) translate(-5px, -1px);
+          background-size: 55px;
+        }
+      }
+      &:first-child {
+        margin-top: 0;
+        &:after {
+          transform: scale(1.8) rotate(-3deg) translate(-7px, 6px);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 2000px) {
+  .wrapper-chapters {
+    width: 1750px;
+    margin: auto;
+  }
+}
+
+@media (min-width: 2500px) {
+  .wrapper-chapters .section .plane-rope:after {
+    right: -45%;
+  }
+}

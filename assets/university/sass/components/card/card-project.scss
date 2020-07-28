@@ -1,0 +1,55 @@
+.card-project {
+  .head {
+    justify-content: center;
+    padding: 20px 10px;
+    .info-list {
+      flex-wrap: wrap;
+      span {
+        font-size: 11px;
+      }
+
+      .prev-gold-icon {
+        @include respond-below(xs) {
+          margin: 5px 0;
+          padding-right: 25px;
+          margin-left: 15px;
+
+          &:last-child {
+            margin-left: 0;
+          }
+        }
+        &:before {
+          @include respond-below(xs) {
+            left: -10px;
+            top: -5px;
+            font-size: 17px;
+          }
+        }
+        img {
+          @include respond-below(xs) {
+            width: 15px;
+            height: 15px;
+          }
+        }
+      }
+    }
+    .box1,
+    .box2 {
+      content: "";
+      width: 55px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      @include transform(skew(-40deg));
+    }
+    .box1 {
+      left: 25px;
+      background: rgba(255, 255, 255, 0.2);
+      width: 35px;
+    }
+    .box2 {
+      left: 70px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+}

@@ -1,0 +1,60 @@
+.menu .main-menu ul {
+  svg {
+    width: 37px;
+    height: 47px;
+    &.ticket {
+      width: 62px;
+    }
+  }
+
+  li {
+    a {
+      .icon,
+      .icon-stroke {
+        @include transition(0.5s);
+      }
+
+      &:hover,
+      &:focus {
+        .icon {
+          fill: $primery;
+        }
+
+        .icon-stroke {
+          stroke: $primery;
+        }
+      }
+    }
+    &.active {
+      &:after {
+        content: " ";
+        background: #a5134e;
+        color: white;
+        border-radius: 10px 0 0px 10px;
+        position: absolute;
+        width: 8px;
+        height: 95px;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+      }
+      a {
+        .icon {
+          fill: $primery;
+        }
+
+        .icon-stroke {
+          stroke: $primery;
+        }
+      }
+    }
+  }
+}
+
+/* ------------------- responsive ------------------- */
+
+@media screen and(max-width:768px) {
+  .rtl .menu .main-menu ul li svg {
+    height: 25px;
+  }
+}

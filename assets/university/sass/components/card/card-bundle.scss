@@ -1,0 +1,226 @@
+.card-bundle {
+  position: relative;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  margin-top: 45px;
+  margin-bottom: 30px;
+
+  .content {
+    padding: 25px;
+    position: relative;
+    z-index: 1;
+    > div,
+    > p {
+      padding: 15px 0;
+    }
+    > div:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  img.bg {
+    position: absolute;
+    z-index: 0;
+    width: 240px;
+    right: 20px;
+    top: 80px;
+    opacity: 0.1;
+  }
+
+  span {
+    font-size: 13px;
+    @include respond-below(lg) {
+      font-size: 11px;
+    }
+  }
+
+  .head {
+    background-color: $primery;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: 20px 30px;
+
+    color: $white;
+    position: relative;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+
+    &:before {
+      content: "";
+      width: 55px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 15px;
+      @include transform(skew(-40deg));
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .price,
+    .dore {
+      font-size: 14px;
+    }
+
+    .price {
+      margin-right: auto;
+
+      &:before {
+        content: "";
+
+        width: 55px;
+
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 85px;
+        @include transform(skew(-40deg));
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      &:after {
+        content: "";
+        width: 45px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 30px;
+        @include transform(skew(-40deg));
+        background: rgba(255, 255, 255, 0.2);
+      }
+    }
+  }
+
+  p {
+    font-size: 10pt;
+    margin: 0;
+    text-align: justify;
+    color: $paragraph;
+    &::selection {
+      background-color: $theme-color-1;
+      color: #fff;
+    }
+
+    &::-moz-selection {
+      background-color: $theme-color-1;
+      color: #fff;
+    }
+
+    &::-o-selection {
+      background-color: $theme-color-1;
+      color: #fff;
+    }
+
+    &::-ms-selection {
+      background-color: $theme-color-1;
+      color: #fff;
+    }
+
+    &::-webkit-selection {
+      background-color: $theme-color-1;
+      color: #fff;
+    }
+  }
+
+  .progress {
+    direction: ltr;
+
+    .progress-bar {
+      background-color: $Secondary;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+  }
+
+  .top {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    margin-top: 5px;
+
+    .title {
+      display: block;
+      font-family: BVazir;
+      font-size: 18px;
+      color: $dark;
+      font-weight: normal;
+      margin: 0;
+    }
+
+    .Lpart {
+      margin-right: auto;
+      width: 30%;
+      @extend .text-left;
+      span {
+        color: $light;
+        font-size: 11px;
+      }
+    }
+  }
+
+  .btm {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+
+    .Rpart {
+      display: flex;
+      flex-flow: row;
+      .icon {
+        width: 40px;
+        height: 40px;
+        position: relative;
+        @include respond-below(sm) {
+          width: 30px;
+          height: 30px;
+        }
+        &:hover {
+          .card-tooltip {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+        &.play {
+          margin-left: 20px;
+          .card-tooltip {
+            padding: 5px 15px;
+            width: 95px;
+            left: 45%;
+            @include respond-below(sm) {
+              width: 80px;
+              left: 28%;
+            }
+          }
+        }
+      }
+      svg {
+        height: 100%;
+
+        path {
+          @include transition(0.5s);
+        }
+
+        &:hover {
+          path {
+            fill: $primery;
+          }
+        }
+      }
+    }
+
+    .Lpart {
+      margin-right: auto;
+    }
+  }
+}
+
+/* ------------------- responsive ------------------- */
+
+@media screen and(max-width:768px) {
+  .card-bundle {
+    .top strong {
+      font-size: 11pt;
+    }
+  }
+}
